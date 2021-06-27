@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Create A New Profile Page{% endblock %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+
+    <h1>Create A Profile Page ...</h1>
+    <br><br>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            
+            {{ form.as_p}}  <!--Расположить формы по тэгу p -->
+            <button class="btn btn-primary">Create A Profile Page</button>
+        </form>
+    </div>
+
+
+{% else %}
+
+You are not allowed here!
+
+{% endif %}
+
+
+
+{% endblock %}
