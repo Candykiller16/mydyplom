@@ -14,10 +14,10 @@ for item in choices:
 class PostForm(forms.ModelForm): # Назначали поля в виде виджетов для вкладки Add Post, присваивали класс CSS из Bootstrap
     class Meta:
         model = Post
-        fields = ('title', 'title_tag', 'author', 'category' , 'body', 'snippet', 'header_image')
+        fields = ('title', 'title_tag', 'author', 'category', 'body', 'snippet', 'header_image')
 
         widgets = {
-            'title' : forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
             'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'user', 'type':'hidden'}),
             # 'author': forms.Select(attrs={'class': 'form-control'}) убрал поле, чтобы проект сам понимал после LogIn, кто делает пост,
@@ -46,6 +46,8 @@ class CommentForm(forms.ModelForm): # Назначали поля в виде в
         fields = ('name', 'body')
 
         widgets = {
-            'name' : forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+    

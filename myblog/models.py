@@ -6,13 +6,13 @@ from datetime import datetime, date
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
 
+    name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
         
-    def get_absolute_url(self): # для Update post
+    def get_absolute_url(self):
         return reverse('home')
 
 
@@ -64,3 +64,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.post.title, self.name)
+
+
+
+
